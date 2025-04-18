@@ -1,0 +1,164 @@
+<!-- Объявление типа документа HTML5 -->
+<!DOCTYPE html>
+<!-- Основной тег документа с указанием языка -->
+<html lang="en">
+<head>
+    <!-- Кодировка документа -->
+    <meta charset="UTF-8">
+    <!-- Настройка адаптивного отображения на мобильных устройствах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Разрешение индексации страницы поисковыми роботами -->
+    <meta name="robots" content="index, follow">
+    
+    
+    
+    <!-- Иконка сайта (favicon) -->
+    <link rel="icon" href="https://i.pinimg.com/736x/26/6e/d8/266ed8057346cfb78ee00fd624d78701.jpg">
+    <!-- Заголовок страницы -->
+    <title>WGN</title>
+    
+    
+    <!-- Предварительное подключение к сервисам Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    
+    <!-- Подключение основного файла стилей -->
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <!-- Фоновый элемент -->
+    <div id="bg"></div>
+
+    <!-- Основной контейнер страницы -->
+    <div class="container">
+        <!-- Главный блок с карточками -->
+        <div class="card-main">
+            <!-- Первая карточка (профиль) -->
+            <div class="card1">
+                <!-- Панель с социальными сетями -->
+                <div class="panel-1">
+                    <div class="panel-social-networks">
+                        <div class="panel-sci">
+                            <!-- Ссылка на Telegram с PNG иконкой -->
+                            <a href="https://t.me/Dimimimoto0" target="_blank" class="social-icon">
+                                <img src="7480d2288e659183a4932d16c21d29f4.jpg" alt="" width="20" height="20">
+                            </a>
+                            
+                            <!-- Ссылка на GitHub с PNG иконкой -->
+                            <a href="" target="_blank" class="social-icon">
+                                <img src="Git.jpg" alt="" width="20" height="20">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка с основной информацией профиля -->
+                <div class="card-WGN">
+                    <!-- Заголовок профиля -->
+                    <div class="card-name-WGN">
+                                WGN
+                    </div>
+                    <!-- Контейнер с информацией профиля -->
+                    <div class="card-info-akainly">
+                        <!-- Аватар пользователя -->
+                        <div class="WGN-avatar">
+                            <img src="kaneki.jpg" style="width: 90px; height: 90px; border-radius: 999px;">
+                        </div>
+
+                        <!-- Разделительная линия -->
+                        <div class="stick-1"></div>
+
+                        <!-- Текстовая информация профиля -->
+                        <div class="info-WGN">
+                            <p>I am <span class="gradient-text-WGN">WGN</span> -  I am ** yers old , I a proponent of privacy and privacy , i teach Golang , welcome to my website.</p>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вторая карточка (время и дата) -->
+            <div class="card2">
+                <!-- Блок с временем и датой -->
+                <div class="card-time-date">
+                    <!-- Карточка времени -->
+                    <div class="card-time">
+                        <div class="card-name-time">
+                            TIME
+                        </div>
+                        <div class="info-time">
+                            <!-- Элемент для отображения времени -->
+                            <div class="time" id="time"></div>
+                            <!-- Часовой пояс -->
+                            
+                        </div>
+                    </div>
+    
+                    <!-- Карточка даты -->
+                    <div class="card-date">
+                        
+                        <div class="gif-container">
+                            <img src = "ghool.gif" alt = "" class="gif-image">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Карточка активности -->
+                <div class="card-activity">
+                    <div class="name-activity">
+                        MY LOVED ONES
+                    </div>
+    
+                    <div class="info-activity">
+                        <p>Wearx****</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Третья карточка (проекты) -->
+            <div class="card3">
+                <!-- Панель с переключением проектов -->
+                <div class="panel-project" style="visibility: hidden;">
+                    <div class="panel-project-avatar">
+                        <!-- Ваш контент -->
+                    </div>
+                </div>
+
+                <!-- Основной блок проектов -->
+                <div class="card-project">
+                    <div class="card-name-project">
+
+                    </div>
+
+                    <!-- Карточка проекта Akaiya -->
+                    <div class="card-info-project" id="akaiyaCard" onclick="showCard('akaiya')">
+                        <div class="main-info">
+                            <!-- Аватар проекта -->
+                            <div class="project-avatar">
+                                <img src="cicada3301.jpg" style="width: 90px; height: 90px; border-radius: 999px;" >
+                            </div>
+                            <!-- Информация о проекте -->
+                            <div class="name-project">
+                                <p>OUR<br>IDEOLOGY<br></p>
+                            </div>
+                        </div>
+
+                        <!-- Разделительная линия -->
+                        <div class="stick-2"></div>
+
+                        <!-- Описание проекта -->
+                        <div class="info-project">
+                            <p><span class="color">Nemezida</span> - Everything that is open is not protected, it is free, only people belong to people, are the thought is "nothing is true, everything is allowed</p>
+                        </div>
+                    </div>
+            
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript файла с отложенной загрузкой -->
+    <script defer src="/index.js"></script>
+</body>
+</html>
