@@ -1,0 +1,582 @@
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Элементы будут располагаться в колонку */
+  justify-content: flex-start; /* Контент выровнен по верхнему краю */
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.gif-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  background: url('https://i.pinimg.com/originals/f0/3e/b3/f03eb39886bbc8b835a72815b473f663.gif') center/cover no-repeat;
+  opacity: 0.15;
+  filter: blur(1px) brightness(0.7);
+  -webkit-filter: blur(1px) brightness(0.7);
+  animation: fadeIn 2s ease-out forwards;
+  z-index: -1;
+}
+
+.background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  z-index: -1;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ========== КАРТОЧКИ ========== */
+.side-card {
+  background: linear-gradient(45deg, #30cfd0, #330867);
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 25px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 280px;
+  height: 341px;
+}
+
+.center-card {
+  border: 2px solid #C94B4B ▶ #4B134F;
+  border-radius: 15px;
+  padding: 40px 25px 25px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+  order: -1;
+}
+
+/* ========== ЭЛЕМЕНТЫ КАРТОЧЕК ========== */
+.card-title {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #40E0D0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-icon {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.centered-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #40E0D0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-text {
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+/* ========== ПРАВАЯ КАРТОЧКА (INFO) ========== */
+.info-card {
+  background: linear-gradient(135deg, #330867 0%, #30cfd0 100%);
+  width: 280px;
+  height: 341px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+.info-item {
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: rgba(0,0,0,0.25);
+  transform: translateX(5px);
+}
+
+.info-label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+}
+
+.info-value {
+  font-size: 18px;
+  color: #f0f0f0;
+  padding-left: 15px;
+  border-left: 2px solid #40E0D0;
+  font-style: italic;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ========== ЦЕНТРАЛЬНАЯ КАРТОЧКА ========== */
+.photo-container {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -80px auto 0;
+  border: 4px solid #40E0D0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-above-divider {
+  color: #FC466B;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.divider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #df1212, transparent);
+  margin: 0 auto 20px;
+  border: none;
+}
+
+.icon-bar {
+  background-color: #355C7D;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto 0;
+  width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  padding: 2px;
+}
+
+.icon-link:hover .centered-icon,
+.icon-link:hover .icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border-color: #FC466B;
+}
+
+.side-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.time-card {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 12px 20px;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.time-display {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.date-display {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+
+/* Стили для десктопов (по умолчанию) */
+.time-card {
+  position: fixed;
+  left: 50%;
+  top: 500px;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+  padding: 12px 20px;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .time-card {
+    top: auto; /* Убираем фиксированную позицию сверху */
+    bottom: 20px; /* Размещаем внизу с отступом */
+    width: 90%; /* Ширина карточки */
+    max-width: 300px; /* Максимальная ширина */
+    padding: 10px 15px; /* Уменьшаем отступы */
+  }
+  
+  .time-display {
+    font-size: 1.5rem; /* Уменьшаем размер шрифта */
+  }
+  
+  .date-display {
+    font-size: 0.8rem; /* Уменьшаем размер шрифта */
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .time-card {
+    bottom: 10px;
+    width: 95%;
+    padding: 8px 12px;
+  }
+  
+  .time-display {
+    font-size: 1.3rem;
+  }
+}
+
+/* ========== МАКЕТ ДЛЯ КАРТОЧЕК ========== */
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px; /* Отступ сверху для карточек */
+
+}
+
+
+
+
+/* Стили музыкального плеера */
+.music-player {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.icon-button {
+  width: 24px; /* или другой размер по желанию */
+  height: 24px;
+}
+.control-btn:hover {
+  background: none;
+  transform: scale(1.1);
+}
+
+.play-btn {
+  background: none;
+  font-size: 18px;
+}
+
+.track-info {
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.track-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.track-time {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #30cfd0, #330867);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+@media (max-width: 768px) {
+  .music-player {
+    padding: 10px;
+  }
+  
+  .control-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .track-name {
+    font-size: 12px;
+  }
+  
+  .track-time {
+    font-size: 10px;
+  }
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .side-card, .info-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .center-card {
+    padding: 20px;
+  }
+
+  .photo-container {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+  }
+
+  .text-above-divider {
+    font-size: 20px;
+  }
+
+  .icon-bar {
+    width: 90%;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .info-label, .info-value {
+    font-size: 16px;
+  }
+}
+
+/* Для десктопов */
+@media (min-width: 769px) {
+  .main-container {
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+  }
+
+  .center-card {
+    order: 0;
+    padding-top: 60px;
+  }
+
+  .photo-container {
+    margin-top: -100px;
+  }
+
+  .card-title {
+    font-size: 28px;
+  }
+
+  .centered-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-label {
+    font-size: 24px;
+  }
+
+  .info-value {
+    font-size: 20px;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .photo-container {
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+  }
+
+  .text-above-divider {
+    font-size: 18px;
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .card-text, .info-value {
+    font-size: 12px;
+  }
+
+  .info-label {
+    font-size: 14px;
+  }
+}
